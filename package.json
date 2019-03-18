@@ -7,18 +7,25 @@
   "author": "lenny_the_lobster",
   "license": "MIT",
   "scripts": {
+    "start": "nodemon --exec babel-node lib/server.js",
     "dev": "pm2 start lib/server.js --watch --interpreter babel-node",
     "webpack": "webpack -wd",
     "test": "jest --watch"
   },
   "babel": {
     "presets": [
-      "react",
-      "env",
-      "stage-2"
+      "@babel/env",
+      "@babel/react"
+    ],
+    "plugins": [
+      "@babel/plugin-proposal-class-properties"
     ]
   },
   "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.3.4",
+    "@babel/node": "^7.2.2",
+    "@babel/preset-env": "^7.3.4",
     "babel-eslint": "^8.2.5",
     "eslint": "^5.1.0",
     "eslint-plugin-react": "^7.10.0",
@@ -26,6 +33,8 @@
     "react-test-renderer": "^16.4.2"
   },
   "dependencies": {
+    "@babel/plugin-proposal-class-properties": "^7.3.4",
+    "@babel/preset-react": "^7.0.0",
     "babel-cli": "^6.26.0",
     "babel-loader": "^7.1.5",
     "babel-polyfill": "^6.26.0",
