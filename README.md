@@ -13,3 +13,6 @@ lsof -i tcp:<PORT NUMBER>  <---
 kill -9 PID
 
 $ yarn pm2 logs
+
+
+https://stackoverflow.com/questions/51455882/babel7-and-jest-configuration
